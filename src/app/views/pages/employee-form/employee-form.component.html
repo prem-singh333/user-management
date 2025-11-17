@@ -1,0 +1,53 @@
+<main class="p-3 rounded-md border shadow-md">
+    <div class="flex items-center justify-between border-b pb-2">
+        <p class="font-medium text-gray-500">{{btnMode? 'Update' : 'Save'}}</p>
+        <button class="text-white bg-blue-400 text-sm px-3 py-1 rounded-md hover:shadow-md hover:-translate-y-0.5" (click)="goBack()">&larr; Go Back</button>
+    </div>
+    <form [formGroup]="empForm" (ngSubmit)="onSubmit()">
+        <div class="grid gap-4 py-4">
+            <div>
+                <input type="text" placeholder="Employee full name" name="fullName" formControlName="name"
+                    class="text-sm text-gray-500 font-medium px-3 py-1.5 border-2 border-transparent rounded-md w-full bg-gray-100 hover:bg-gray-50 hover:border-blue-200 focus:border-blue-500 hover:shadow-md hover:-translate-y-1">
+                <!-- <small>Field is required*</small> -->
+            </div>
+
+            <div>
+                <input type="text" placeholder="Employee gmail id" name="email" formControlName="email"
+                    class="text-sm text-gray-500 font-medium px-3 py-1.5 border-2 border-transparent rounded-md w-full bg-gray-100 hover:bg-gray-50 hover:border-blue-200 focus:border-blue-500 hover:shadow-md hover:-translate-y-1"> 
+                <!-- <small>Field is required*</small> -->
+            </div>
+
+            <div>
+                <input type="number" name="mobileNum" placeholder="Employee mobile no." formControlName="mobile"
+                    class="text-sm text-gray-500 font-medium px-3 py-1.5 border-2 border-transparent rounded-md w-full bg-gray-100 hover:bg-gray-50 hover:border-blue-200 focus:border-blue-500 hover:shadow-md hover:-translate-y-1"
+                    id="mob-input">
+                <!-- <small>Field is required*</small> -->
+            </div>
+
+            <div class=" px-3 py-1.5 border-2 border-transparent rounded-md w-full bg-gray-100 hover:bg-gray-50 hover:border-blue-200 focus:border-blue-500 flex items-center justify-between hover:shadow-md hover:-translate-y-1">
+                <p class="text-sm text-slate-500 font-light">Role:</p>
+                <select
+                    class="text-sm text-gray-500 font-ligh bg-transparent w-full" formControlName="empRole">
+                    <option *ngFor="let role of employeeRole" [value]="role">{{role | titlecase}}</option>
+                </select>
+            </div>
+
+            <div class=" px-3 py-1.5 border-2 border-transparent rounded-md w-full bg-gray-100 hover:bg-gray-50 hover:border-blue-200 focus:border-blue-500 flex items-center justify-between hover:shadow-md hover:-translate-y-1">
+                <p class="text-sm text-slate-500 font-light">Gender:</p>
+                <select
+                    class="text-sm text-gray-500 font-ligh bg-transparent w-full" formControlName="empGen">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+            <button type="button"
+                class="border-2 border-blue-500 bg-white text-sm text-blue-500 px-3 py-1 w-full mt-4 rounded-md hover:bg-blue-500 hover:text-white hover:shadow-md hover:-translate-y-0.5" (click)="allClear()">Reset</button>
+
+            <button type="submit"
+                class="bg-blue-500 text-sm text-white px-3 py-1 w-full mt-4 rounded-md hover:bg-blue-600 hover:shadow-md hover:-translate-y-0.5">{{btnMode? 'Update' : 'Save'}}</button>
+        </div>
+    </form>
+</main>

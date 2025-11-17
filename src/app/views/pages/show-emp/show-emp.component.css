@@ -1,0 +1,23 @@
+main{
+    /* width: 600px; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 985px) {
+    main{
+    width: 100%;
+    }
+
+    #details-box{
+        display: grid !important;
+        grid-template-columns: repeat(1,minmax(200px,1fr)) !important;
+    }
+
+    /* #name-title{
+        display: flex !important;
+       flex-direction: column !important;
+    } */
+}

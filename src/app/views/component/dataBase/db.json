@@ -1,0 +1,22 @@
+{
+  "employee": [
+    {
+      "id": "5183",
+      "name": "Rohan Mahato",
+      "email": "mahato@gmail.com",
+      "mobile": 6209475842,
+      "empRole": "ui desginer",
+      "empGen": "male"
+    }
+  ],
+  "users": [
+    {
+      "id": "98fd",
+      "firstName": "",
+      "lastName": "",
+      "email": "as@gmail.com",
+      "mobile": "",
+      "password": "121212"
+    }
+  ]
+}

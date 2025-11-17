@@ -1,0 +1,87 @@
+<main class="p-3 rounded border shadow-md grid grid-cols-2 items-center mt-3">
+    
+        <div>
+            <img src="https://static.vecteezy.com/system/resources/previews/003/689/228/non_2x/online-registration-or-sign-up-login-for-account-on-smartphone-app-user-interface-with-secure-password-mobile-application-for-ui-web-banner-access-cartoon-people-illustration-vector.jpg"
+                alt="">
+    
+        </div>
+    
+        <div>
+            <div class="mb-4">
+                <p class="text-blue-500 text-2xl font-medium">{{loginMode? 'Login' : 'Register'}}</p>
+                <p class="text-gray-500 text-sm">{{loginMode? 'Please sign in to continue.' : 'Please register to login.'}}
+                </p>
+            </div>
+            <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                <div class="grid gap-4">
+                    <div *ngIf="!loginMode">
+                        <input type="text" placeholder="First name" name="firstName" formControlName="firstName"
+                            class="text-sm text-gray-500 font-medium px-3 py-1.5 border-2 border-transparent rounded-md w-full bg-gray-100 hover:bg-gray-50 hover:border-blue-200 focus:border-blue-500 hover:shadow-md hover:-translate-y-1">
+                    </div>
+    
+                    <div *ngIf="!loginMode">
+                        <input type="text" placeholder="Last name" name="lastName" formControlName="lastName"
+                            class="text-sm text-gray-500 font-medium px-3 py-1.5 border-2 border-transparent rounded-md w-full bg-gray-100 hover:bg-gray-50 hover:border-blue-200 focus:border-blue-500 hover:shadow-md hover:-translate-y-1">
+                    </div>
+    
+                    <div>
+                        <input type="email" placeholder="eg. xyz@gmail.com" name="email" formControlName="email"
+                            class="text-sm text-gray-500 font-medium px-3 py-1.5 border-2 border-transparent rounded-md w-full bg-gray-100 hover:bg-gray-50 hover:border-blue-200 focus:border-blue-500 hover:shadow-md hover:-translate-y-1">
+                    </div>
+    
+                    <div *ngIf="!loginMode">
+                        <input type="number" placeholder="Enter mobile no." formControlName="mobile"
+                            class="text-sm text-gray-500 font-medium px-3 py-1.5 border-2 border-transparent rounded-md w-full bg-gray-100 hover:bg-gray-50 hover:border-blue-200 focus:border-blue-500 hover:shadow-md hover:-translate-y-1"
+                            id="mob-input">
+                    </div>
+    
+                    <div>
+                        <div
+                            class="flex items-center justify-between bg-gray-100 hover:-translate-y-1 border-2 border-transparent focus:border-blue-500 hover:shadow-md hover:bg-gray-50 hover:border-blue-200 px-3 py-1.5 rounded-md">
+                            <div class="w-full">
+                                <input [type]="passHide ? 'text' : 'password'" placeholder="Set password" formControlName="password"
+                                    class="text-sm text-gray-500 font-medium w-full bg-transparent">
+                            </div>
+        
+                            <div class="mr-1.5 cursor-pointer" (click)="hideShow()">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-eye-slash-fill" viewBox="0 0 16 16" *ngIf="!passHide">
+                                    <path
+                                        d="m10.79 12.912-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7 7 0 0 0 2.79-.588M5.21 3.088A7 7 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474z"
+                                        class="text-gray-400" />
+                                    <path
+                                        d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12z"
+                                        class="text-gray-400" />
+                                </svg>
+        
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-eye-fill" viewBox="0 0 16 16" *ngIf="passHide">
+                                    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" class="text-gray-400" />
+                                    <path
+                                        d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"
+                                        class="text-gray-400" />
+                                </svg>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="loginMode">
+                    <small class="text-xs text-blue-500">Forget Password?</small>
+                </div>
+    
+                <small class="text-gray-500" *ngIf="!loginMode">Alredy have account <span
+                        class="text-blue-500 cursor-pointer font-medium hover:text-blue-600"
+                        (click)="isLoggedIn()">Log-in</span></small>
+    
+                <small class="text-gray-500" *ngIf="loginMode">Don't have an account <span
+                        class="text-blue-500 cursor-pointer font-medium hover:text-blue-600" (click)="isLoggedIn()">Sign
+                        UP</span></small>
+    
+                <button
+                    class="bg-blue-500 text-sm text-white px-3 py-1 w-full mt-4 rounded-md hover:bg-blue-600 hover:shadow-md hover:-translate-y-0.5"
+                    type="submit">{{loginMode?
+                    'Log in' : 'Sing Up'}}</button>
+            </form>
+        </div>
+</main>

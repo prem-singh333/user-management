@@ -1,0 +1,94 @@
+{
+  "employee": [
+    {
+      "name": "sneha singh",
+      "email": "sneha@gmail.com",
+      "mobile": 6209475842,
+      "empRole": "ui desginer",
+      "empGen": "female",
+      "id": "5183"
+    },
+    {
+      "id": "a5c4",
+      "name": "prem singh",
+      "email": "prem@gmail.com",
+      "mobile": 7970576846,
+      "empRole": "frontend developer",
+      "empGen": "male"
+    },
+    {
+      "id": "3fc4",
+      "name": "aman singh",
+      "email": "aman@gmail.com",
+      "mobile": 6209485211,
+      "empRole": "ui desginer",
+      "empGen": "male"
+    }
+  ],
+  "users": [
+    {
+      "id": "98fd",
+      "firstName": "",
+      "lastName": "",
+      "email": "as@gmail.com",
+      "mobile": "",
+      "password": "121212"
+    },
+    {
+      "id": "e081",
+      "firstName": "prem",
+      "lastName": "singh",
+      "email": "prem@gmail.com",
+      "mobile": 859547623,
+      "password": "123456"
+    },
+    {
+      "id": "e857",
+      "firstName": "aradhya",
+      "lastName": "kumari",
+      "email": "rajdeepsingh1234@gmail.com",
+      "mobile": 7870576864,
+      "password": "147852"
+    },
+    {
+      "id": "410b",
+      "firstName": "kumar",
+      "lastName": "ak",
+      "email": "ak@gmail.com",
+      "mobile": 78945654545,
+      "password": "145214"
+    },
+    {
+      "id": "81b2",
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "mobile": "",
+      "password": ""
+    },
+    {
+      "id": "8d4b",
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "mobile": "",
+      "password": ""
+    },
+    {
+      "id": "63ac",
+      "firstName": "rahul",
+      "lastName": "singh",
+      "email": "rs@gmail.com",
+      "mobile": 7870576862,
+      "password": "124578"
+    },
+    {
+      "id": "8dc8",
+      "firstName": "prem",
+      "lastName": "singh",
+      "email": "prem@gmail.com",
+      "mobile": 7870576846,
+      "password": "@premsingh"
+    }
+  ]
+}

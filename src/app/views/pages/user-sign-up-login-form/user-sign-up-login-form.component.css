@@ -1,0 +1,31 @@
+main{
+    /* width: 300px; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+input:focus{
+    outline: none;
+}
+
+input::placeholder{
+    font-weight: 300;
+}
+
+#mob-input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+
+}
+
+/* add media quary */
+@media screen and (max-width: 985px) {
+    main{
+    width: 300px;
+        display: grid !important;
+        grid-template-columns: repeat(1,minmax(100px,1fr));
+    }
+}

@@ -1,0 +1,42 @@
+<main class="mt-5 m-auto max-w-7xl px-3">
+    <div class="border rounded-md shadow">
+        <div class="p-3 flex items-center justify-between">
+            <h4 class="text-xl font-medium text-gray-500">Dashboard</h4>
+
+            <button class="text-sm border border-transparent px-3 py-1 rounded-md text-blue-500 shadow hover:-translate-y-0.5 hover:bg-blue-500 hover:text-white hover:shadow-md" (click)="addEmp()">&plus;Add Employee</button>
+        </div>
+
+        <div class="overflow-x-auto">
+            <table class="w-full">
+                <thead>
+                    <tr class="bg-blue-500">
+                        <th class="px-3 py-1.5 font-medium text-sm text-white text-start">#Emp Id</th>
+                        <th class="px-3 py-1.5 font-medium text-sm text-white text-start">Name</th>
+                        <th class="px-3 py-1.5 font-medium text-sm text-white text-start">Email</th>
+                        <th class="px-3 py-1.5 font-medium text-sm text-white text-start">Mobile No.</th>
+                        <th class="px-3 py-1.5 font-medium text-sm text-white text-start">Emp Role</th>
+                        <th class="px-3 py-1.5 font-medium text-sm text-white text-start">Gender</th>
+                        <th class="px-3 py-1.5 font-medium text-sm text-white text-end">View details</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let emp of empData" class="border-b">
+                        <td class="px-3 py-1.5 font-medium text-sm text-start text-gray-500">{{emp.id}}</td>
+                        <td class="px-3 py-1.5 font-medium text-sm text-start text-gray-500">{{emp.name | uppercase}}</td>
+                        <td class="px-3 py-1.5 font-medium text-sm text-start text-gray-500">{{emp.email}}</td>
+                        <td class="px-3 py-1.5 font-medium text-sm text-start text-gray-500">{{emp.mobile}}</td>
+                        <td class="px-3 py-1.5 font-medium text-sm text-start text-gray-500">{{emp.empRole | uppercase}}</td>
+                        <td class="px-3 py-1.5 font-medium text-sm text-start text-gray-500">{{emp.empGen | uppercase}}</td>
+                        <td class="px-3 py-1.5 font-medium text-sm text-end"><a [routerLink]="[emp.id]" class="inline-block"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor"
+                                    class="bi bi-person-fill" viewBox="0 0 16 16">
+                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
+                                        class="text-gray-500" />
+                                </svg></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
